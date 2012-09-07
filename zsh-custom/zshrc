@@ -35,16 +35,16 @@ plugins=(bundler git rvm venv_activator kaze)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-source ~/.shell/aliases.sh
-source ~/.shell/build_flags.sh
-source ~/.shell/charset.sh
-source ~/.shell/cd_vars.sh
-source ~/.shell/editor.sh
-source ~/.shell/path_opts.sh
-source ~/.shell/services.sh
-source ~/.shell/ssh_vars.sh
-source ~/.shell/take.sh
-source ~/.shell/variables.sh
+# source ~/.shell/aliases.sh
+# source ~/.shell/build_flags.sh
+# source ~/.shell/charset.sh
+# source ~/.shell/cd_vars.sh
+# source ~/.shell/editor.sh
+# source ~/.shell/path_opts.sh
+# source ~/.shell/services.sh
+# source ~/.shell/ssh_vars.sh
+# source ~/.shell/take.sh
+# source ~/.shell/variables.sh
 
 # emacs keybindings:
 bindkey -e
