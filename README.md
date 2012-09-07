@@ -1,3 +1,3 @@
 ## installation
 
-curl -Lo- https://bit.ly/janus-bootstrap | bash;
+curl -Lo- http://codebase.kaze.hu/command-line/src/a8896bdd29f1/install.sh | bash;

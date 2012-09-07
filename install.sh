@@ -1,10 +1,30 @@
-#!/usr/bin/bash
+#!/bin/bash
+
+# utility functions
+# --------------------------------------------------------------------------- #
+
+# link a file to the user's home directory
+# as a dotfile
+function link_dotfile() {
+  ln -sf "$(pwd)/${1}" "${HOME}/.${1}";
+}
+
+# linking all files from the current directory
+# to the user's home dir as dotfiles
+function link_dotfiles() {
+  local files=$(ls);
+
+  for f in $files
+  do
+    link_dotfile ${f};
+  done
+}
 
 # pre-installation and downloads
 # --------------------------------------------------------------------------- #
 # installing prerequisites
-sudo apt-get update
-sudo apt-get install -y git-core vim wget zsh zsh-dev zsh-doc;
+# sudo apt-get update
+# sudo apt-get install -y git-core vim wget zsh zsh-dev zsh-doc;
 
 # installing vim
 curl -Lo- https://bit.ly/janus-bootstrap | bash;
@@ -42,23 +62,3 @@ ${HOME}/tmp/src/command-line/zsh-custom;
 rm -rf "${HOME}/.oh-my-zsh/custom";
 ln -sf "$(pwd)/custom" "${HOME}/.oh-my-zsh";
 link_dotfile "zshrc";
-
-# utility functions
-# --------------------------------------------------------------------------- #
-
-# link a file to the user's home directory
-# as a dotfile
-function link_dotfile() {
-  ln -sf "$(pwd)/${1}" "${HOME}/.${1}";
-}
-
-# linking all files from the current directory
-# to the user's home dir as dotfiles
-function link_dotfiles() {
-  local files=$(ls);
-
-  for f in $files
-  do
-    link_dotfile ${f};
-  done
-}
