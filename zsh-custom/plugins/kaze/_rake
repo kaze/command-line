@@ -1,0 +1,9 @@
+#compdef rake
+
+if [[ -f Rakefile || -f rakefile ]]; then
+  local recent=$(ls -atR | grep -i '\.*rake\.*' | head -n 1)
+  if [[ $recent != .rake_tasks_cache ]]; then
+    rake --tasks | cut -d ' ' -f 2 > .rake_tasks_cache
+  fi
+  compadd $(cat .rake_tasks_cache)
+fi

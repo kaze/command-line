@@ -1,0 +1,14 @@
+if has("gui")
+  colorscheme solarized
+  set autochdir
+  " hiding macvim's toolbar
+  set guioptions-=T
+endif
+
+set guifont=Droid\ Sans\ Mono:h12
+
+"dont load csapprox if we no gui support - silences an annoying warning
+if !has("gui")
+    let g:CSApprox_loaded = 1
+    colorscheme solarized
+endif
