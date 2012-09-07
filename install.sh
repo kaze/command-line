@@ -27,7 +27,7 @@ link_dotfiles;
 cd ${HOME}/tmp/src/command-line/vim-custom/janus;
 
 # ...cloning repos...
-while IFS= read -r repo
+while read -r repo
 do
   git clone ${repo}
 done < "./gitlist.txt"
