@@ -58,7 +58,7 @@ link_dotfiles;
 
 # installing zsh customization
 # --------------------------------------------------------------------------- #
-${HOME}/tmp/src/command-line/zsh-custom;
+cd ${HOME}/tmp/src/command-line/zsh-custom;
 rm -rf "${HOME}/.oh-my-zsh/custom";
 ln -sf "$(pwd)/custom" "${HOME}/.oh-my-zsh";
 link_dotfile "zshrc";
