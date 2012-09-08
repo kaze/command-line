@@ -46,7 +46,7 @@ function link_files() {
 curl -Lo- https://bit.ly/janus-bootstrap | bash;
 
 # installing zsh
-wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh;
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 chsh -s /bin/zsh;
 
 # downloading files for customization
@@ -82,4 +82,5 @@ link_dotfile "zshrc";
 # installing executables in /usr/local/bin
 # --------------------------------------------------------------------------- #
 cd ${HOME}/tmp/src/command-line/bin;
-link_files /usr/local/bin;
+mkdir "${HOME}/bin";
+link_files "${HOME}/bin";
