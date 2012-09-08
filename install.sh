@@ -22,9 +22,8 @@ function link_dotfiles() {
 
 # pre-installation and downloads
 # --------------------------------------------------------------------------- #
-# installing prerequisites
-# sudo apt-get update
-# sudo apt-get install -y git-core vim wget zsh zsh-dev zsh-doc;
+# installation prerequisites
+# git vim wget zsh zsh-dev zsh-doc;
 
 # installing vim
 curl -Lo- https://bit.ly/janus-bootstrap | bash;
@@ -35,7 +34,7 @@ chsh -s /bin/zsh;
 
 # downloading files for customization
 mkdir -p ${HOME}/tmp/src && cd ${HOME}/tmp/src;
-git clone git@bitbucket.org:kaaze/command-line.git;
+git clone https://kaaze@bitbucket.org/kaaze/command-line.git;
 
 # installing other dotfiles
 # --------------------------------------------------------------------------- #
