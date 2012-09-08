@@ -38,6 +38,9 @@ source $ZSH/oh-my-zsh.sh
 bindkey -e
 
 export CLICOLOR=1;
+PATH="/usr/local/bin:${PATH}"
+PATH="${HOME}/bin:${PATH}"
+export PATH;
 
 # tmuxinator
 # --------------------------------------------------------------------------- #

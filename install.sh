@@ -37,50 +37,60 @@ function link_files() {
   done
 }
 
-# pre-installation and downloads
+# downloads
 # --------------------------------------------------------------------------- #
-# installation prerequisites
-# git vim wget zsh zsh-dev zsh-doc;
+if [[ ! -d "${HOME}/.vim" ]]; then
+  # installing vim
+  curl -Lo- https://bit.ly/janus-bootstrap | bash;
+fi
 
-# installing vim
-curl -Lo- https://bit.ly/janus-bootstrap | bash;
+echo "---> janus-vim installed"
 
-# installing zsh
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-chsh -s /bin/zsh;
+if [[ ! -d "${HOME}/.oh-my-zsh" ]]; then
+  # installing zsh
+  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+  chsh -s /bin/zsh;
+fi
 
-# downloading files for customization
-mkdir -p ${HOME}/tmp/src && cd ${HOME}/tmp/src;
-git clone https://kaaze@bitbucket.org/kaaze/command-line.git;
+echo "---> oh-my-zsh installed"
 
-# installing other dotfiles
-# --------------------------------------------------------------------------- #
-cd ${HOME}/tmp/src/command-line/dotfiles;
-link_dotfiles;
+if [[ ! -f "${HOME}/.vimrc.before" ]]; then
+  # downloading files for customization
+  mkdir -p ${HOME}/tmp/src && cd ${HOME}/tmp/src;
+  git clone https://kaaze@bitbucket.org/kaaze/command-line.git;
 
-# installing vim customization
-# --------------------------------------------------------------------------- #
-cd ${HOME}/tmp/src/command-line/vim-custom/janus;
+  # installing other dotfiles
+  # ------------------------------------------------------------------------- #
+  cd ${HOME}/tmp/src/command-line/dotfiles;
+  link_dotfiles;
 
-# ...cloning repos...
-while read -r repo
-do
-  git clone ${repo}
-done < "./gitlist.txt"
+  # installing vim customization
+  # ------------------------------------------------------------------------- #
+  cd ${HOME}/tmp/src/command-line/vim-custom/janus;
 
-# linking files
-cd ${HOME}/tmp/src/command-line/vim-custom;
-link_dotfiles;
+  # ...cloning repos...
+  while read -r repo
+  do
+    git clone ${repo}
+  done < "./gitlist.txt"
 
-# installing zsh customization
-# --------------------------------------------------------------------------- #
-cd ${HOME}/tmp/src/command-line/zsh-custom;
-rm -rf "${HOME}/.oh-my-zsh/custom";
-ln -sf "$(pwd)/custom" "${HOME}/.oh-my-zsh";
-link_dotfile "zshrc";
+  # linking files
+  cd ${HOME}/tmp/src/command-line/vim-custom;
+  link_dotfiles;
 
-# installing executables in /usr/local/bin
-# --------------------------------------------------------------------------- #
-cd ${HOME}/tmp/src/command-line/bin;
-mkdir "${HOME}/bin";
-link_files "${HOME}/bin";
+  # installing zsh customization
+  # ------------------------------------------------------------------------- #
+  cd ${HOME}/tmp/src/command-line/zsh-custom;
+  rm -rf "${HOME}/.oh-my-zsh/custom";
+  ln -sf "$(pwd)/custom" "${HOME}/.oh-my-zsh";
+  link_dotfile "zshrc";
+
+  # installing executables in /usr/local/bin
+  # ------------------------------------------------------------------------- #
+  cd ${HOME}/tmp/src/command-line/bin;
+  mkdir "${HOME}/bin";
+  link_files "${HOME}/bin";
+fi
+
+echo "---> my dotfiles in place"
+
