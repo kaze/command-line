@@ -1,0 +1,68 @@
+#!/usr/bin/env ruby -w
+
+require 'pathname'
+
+ROOT = Pathname.new '/'
+
+BASE_PATH = Pathname.new(`pwd`.to_s.chomp).realpath
+unless MAGIC = ARGV[0]
+  puts "Usage: rwalkup 'place/in/directory/tree'"
+  exit 1
+end
+
+@this_dir = BASE_PATH
+@current_children = @this_dir.children
+@visited = []
+
+def walking_down
+  until @current_children.empty?
+    path = @current_children.pop
+    if look_for_magic(path, MAGIC)
+      print path.to_s
+      return
+    else
+      if path.directory?
+        @current_children.unshift path unless @visited.include?(path)
+      else
+        @current_children.delete path
+      end
+    end
+    @visited << path
+  end
+
+  step_up
+end
+
+def step_up
+  unless @this_dir == ROOT
+    @this_dir = @this_dir.parent
+    @current_children = @this_dir.children
+    walking_down
+  else
+    return nil
+  end
+end
+
+def look_for_magic(path, magic)
+  unless path.to_s.end_with?(magic)
+    if path.directory?
+      curr = Pathname.new(File.join(path.to_s, magic))
+      if curr.exist?
+        return curr
+      end
+    else
+      return nil
+    end
+  else
+    return path
+  end
+end
+
+walking_down
+
+# if __FILE__ == $0
+#   puts "BASE_PATH: #{BASE_PATH}"
+#   puts "MAGIC: #{MAGIC}"
+#   system "#{walking_down}"
+# end
+

@@ -16,7 +16,24 @@ function link_dotfiles() {
 
   for f in $files
   do
-    link_dotfile ${f};
+    link_dotfile $f;
+  done
+}
+
+# link a file to the user's home directory
+function link_file() {
+  ln -sf "$(pwd)/${1}" "${2}";
+}
+
+# linking all files from the current directory
+# to the user's home dir as dotfiles
+function link_files() {
+  local files=$(ls);
+  local path=$1
+
+  for f in $files
+  do
+    link_file $f $path;
   done
 }
 
@@ -61,3 +78,8 @@ cd ${HOME}/tmp/src/command-line/zsh-custom;
 rm -rf "${HOME}/.oh-my-zsh/custom";
 ln -sf "$(pwd)/custom" "${HOME}/.oh-my-zsh";
 link_dotfile "zshrc";
+
+# installing executables in /usr/local/bin
+# --------------------------------------------------------------------------- #
+cd ${HOME}/tmp/src/command-line/bin;
+link_files /usr/local/bin;
