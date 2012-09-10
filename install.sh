@@ -57,7 +57,7 @@ echo "---> oh-my-zsh installed"
 if [[ ! -f "${HOME}/.vimrc.before" ]]; then
   # downloading files for customization
   mkdir -p ${HOME}/tmp/src && cd ${HOME}/tmp/src;
-  git clone https://kaaze@bitbucket.org/kaaze/command-line.git;
+  git clone https://github.com/kaze/command-line.git;
 
   # installing other dotfiles
   # ------------------------------------------------------------------------- #
