@@ -6,4 +6,6 @@ It customizes vim with carlhuda/janus, zsh with robbyrussel/oh-my-zsh and then a
 
 ### installation
 
-curl -Lo- http://codebase.kaze.hu/command-line/raw/7413ffb7c2c2/install.sh | bash;
+I don't recommend to use the install script, because it will messing up your home folder...
+
+curl -Lo- http://url/install.sh | bash;
