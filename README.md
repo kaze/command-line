@@ -6,6 +6,6 @@ It customizes vim with carlhuda/janus, zsh with robbyrussel/oh-my-zsh and then a
 
 ### installation
 
-I don't recommend to use the install script, because it will messing up your home folder...
+I don't recommend to use the install script, because this will be messing up your home folder.
 
-curl -Lo- https://github.com/kaze/command-line/blob/master/install.sh | bash;
+    curl -Lo- https://github.com/kaze/command-line/blob/master/install.sh | bash;
