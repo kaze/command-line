@@ -8,4 +8,4 @@ It customizes vim with carlhuda/janus, zsh with robbyrussel/oh-my-zsh and then a
 
 I don't recommend to use the install script, because this will mess up your home folder.
 
-    curl -Lo- https://github.com/kaze/command-line/blob/master/install.sh | bash;
+    curl -Lo- https://raw.github.com/kaze/command-line/master/install.sh | bash;
