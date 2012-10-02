@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'pathname'
+
+unless MAGIC = ARGV[0]
+  puts "Usage: rwalkup 'place/in/directory/tree'"
+  exit 1
+end
+
+Pathname.pwd.ascend do |dir|
+  magic_file = File.join(dir.to_s, MAGIC)
+  print dir.to_s if File.exist?(magic_file)
+end

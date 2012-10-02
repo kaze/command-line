@@ -1,4 +1,11 @@
-" fuzzyfinder settings
+" -------------------------------------------------------------------------- "
+" powerline
+" -------------------------------------------------------------------------- "
+let g:Powerline_symbols = 'fancy'
+
+" -------------------------------------------------------------------------- "
+" fuzzyfinder
+" -------------------------------------------------------------------------- "
 let g:fuf_dataDir = "~/.vim/_vim-fuf-data"
 " |:FufCoverageFile| - Coverage-File mode (|fuf-coveragefile-mode|)
 " |:FufMruFile|      - MRU-File mode (|fuf-mrufile-mode|)
@@ -17,4 +24,3 @@ nmap ,f :FufFileWithCurrentBufferDir<CR>
 nmap ,h :FufHelp<CR>
 nmap ,l :FufLine<CR>
 nmap ,t :FufTaggedFile<CR>
-

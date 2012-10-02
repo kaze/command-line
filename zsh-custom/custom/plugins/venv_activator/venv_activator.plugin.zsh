@@ -1,6 +1,6 @@
 # inspired by Yaniv Aknin
 # http://tech.blog.aknin.name/2010/10/14/zsh-and-virtualenv/
-# modified walkup script: ~/code/versioned/bin/rwalkup
+# modified walkup script: ~/code/versioned/command-line/bin/walkup
 # (it has to be on PATH)
 
 VIRTUAL_ENV_DISABLE_PROMPT=True
@@ -25,7 +25,7 @@ act () {
     cd "$1"
     source bin/activate
   else
-    virtualenv="$(rwalkup bin/activate)"
+    virtualenv="$(walkup bin/activate)"
     if [ $? -eq 1 ]
     then
       echo "act: not in a virtualenv"
@@ -45,10 +45,10 @@ function active_virtualenv() {
 }
 
 function enclosing_virtualenv() {
-  if ! which rwalkup > /dev/null; then
+  if ! which walkup > /dev/null; then
     return
   fi
-  virtualenv="$(rwalkup bin/activate)"
+  virtualenv="$(walkup bin/activate)"
   if [ -z "$virtualenv" ]; then
     # not in a virtualenv
     return
@@ -79,7 +79,9 @@ function virtualenv_prompt() {
       local text="$active":"$enclosing"
     fi
   fi
-  local result="[%{$fg[$color]%}${text}]"
+  local result="[%{$fg[$color]%}${text}%{$reset_color%}]"
   echo -n $result
 }
 
+
+# vim: set ft=zsh :

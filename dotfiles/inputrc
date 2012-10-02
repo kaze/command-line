@@ -1,1 +1,4 @@
-/Users/kaze/code/versioned/config/home/inputrc
+set completion-ignore-case on
+set completion-prefix-display-length 2
+Control-j: menu-complete
+Control-k: menu-complete-backward

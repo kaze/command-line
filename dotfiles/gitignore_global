@@ -36,3 +36,13 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# my exclusions #
+#################
+*.log
+tmp/**/*
+Gemfile.lock
+.bundle
+*.sublime-project
+*.sublime-workspace
+.rake_tasks_cache

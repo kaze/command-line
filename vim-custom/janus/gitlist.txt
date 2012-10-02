@@ -8,3 +8,4 @@ https://github.com/tpope/vim-rake.git
 https://github.com/tpope/vim-repeat.git
 https://github.com/tpope/vim-rvm.git
 https://github.com/mattn/zencoding-vim.git
+https://github.com/Lokaltog/vim-powerline.git

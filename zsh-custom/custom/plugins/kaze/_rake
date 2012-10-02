@@ -7,3 +7,5 @@ if [[ -f Rakefile || -f rakefile ]]; then
   fi
   compadd $(cat .rake_tasks_cache)
 fi
+
+# vim: set ft=zsh :
