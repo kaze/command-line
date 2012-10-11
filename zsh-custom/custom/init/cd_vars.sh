@@ -1,5 +1,6 @@
 # cd aliasok
 # --------------------------------------------------------------------------- #
+alias ver="cd $HOME/code/versioned"
 alias vhome="cd $HOME/code/versioned/config/home"
 alias vlib="cd $HOME/code/versioned/config/lib"
 alias tmp="cd $HOME/code/tmp"

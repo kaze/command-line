@@ -22,6 +22,7 @@ gem "rb-fchange"
 gem "rb-fsevent"
 gem "rb-inotify"
 gem "ruby-growl"
+gem "growl_notify"
 
 # pry
 gem "pry"
@@ -38,6 +39,8 @@ gem "pry-vterm_aliases"
 
 # guard
 gem "guard"
+gem "guard-coffeescript"
+gem "guard-livereload"
 gem "guard-rake"
 gem "guard-rspec"
 gem "guard-sass"
@@ -45,7 +48,6 @@ gem "guard-spork"
 gem "guard-sprockets"
 
 # virtualization
-gem "chef"
 gem "fog"
 gem "vagrant"
 gem "virtualbox"
@@ -82,6 +84,7 @@ gem "cucumber"
 gem "database_cleaner"
 gem "factory_girl"
 gem "faker"
+gem "letter_opener"
 gem "livereload"
 gem "rspec"
 gem "selenium-webdriver"
@@ -112,9 +115,7 @@ gem "sass-rails"
 gem "spork"
 
 # deployment
-gem "capistrano"
-gem "capistrano-ext"
-gem "deprec"
+gem "chef"
 gem "mina"
 
 # other libs
@@ -124,6 +125,7 @@ gem "eventmachine"
 gem "git"
 gem "httparty"
 gem "jeweler"
+gem "mechanize"
 gem "nokogiri"
 gem "rest-client"
 gem "rush"

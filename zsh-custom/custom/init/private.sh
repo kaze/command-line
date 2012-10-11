@@ -1,0 +1,11 @@
+# dnssimple
+DNSIMPLE_USERNAME="zsoltkormany@gmail.com"
+DNSIMPLE_PASSWORD="ds_476Akor"
+
+# aws
+AWS_ACCES_KEY_ID="AKIAJT7PFQ5IMPTTJI6A"
+AWS_SECRET_ACCESS_KEY="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"
+
+# gmail
+GMAIL_USERNAME="zsoltkormany@gmail.com"
+GMAIL_PASSWORD="gmail_476Akor"
