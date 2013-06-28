@@ -109,6 +109,7 @@ if [[ ! -d "${HOME}/.vim" ]]; then
   cd ${HOME}/tmp/src/command-line;
   ln -sf "$(pwd)/vim" "${HOME}/.vim";
   cd ${HOME}/tmp/src/command-line/vim;
+  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle;
   make;
   vim +BundleInstall +qall;
 
