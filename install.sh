@@ -45,18 +45,64 @@ if [[ ! -d "${HOME}/.oh-my-zsh" ]]; then
   chsh -s /bin/zsh;
 fi
 
-echo "---> oh-my-zsh installed"
+echo "---> oh-my-zsh installed";
 
 if [[ ! -d "${HOME}/.vim" ]]; then
-  # downloading files for customization
-  mkdir -p ${HOME}/tmp/src && cd ${HOME}/tmp/src;
-  rm -rf command-line;
-  git clone https://github.com/kaze/command-line.git;
+
+  if [[ ! -d "${HOME}/tmp/src/command-line" ]]; then
+    # downloading files for customization
+    mkdir -p ${HOME}/tmp/src && cd ${HOME}/tmp/src;
+    git clone https://github.com/kaze/command-line.git;
+
+    echo "---> command-line repo downloaded";
+  fi
+
+  # updating the local command-line repo
+  # ------------------------------------------------------------------------- #
+  cd ${HOME}/tmp/src/command-line;
+  git pull;
+
+  echo "---> command-line repo updated";
 
   # installing other dotfiles
   # ------------------------------------------------------------------------- #
   cd ${HOME}/tmp/src/command-line/dotfiles;
   link_dotfiles;
+
+  echo "---> dofiles linked";
+
+  # installing zsh customization
+  # ------------------------------------------------------------------------- #
+  cd ${HOME}/tmp/src/command-line/zsh-custom;
+  rm -rf "${HOME}/.oh-my-zsh/custom";
+  ln -sf "$(pwd)/custom" "${HOME}/.oh-my-zsh";
+  link_dotfile "zshrc";
+
+  echo "---> zsh customization done";
+
+  # installing sub
+  # --------------------------------------------------------------------------- #
+  cd "$HOME/tmp/src/command-line";
+  rm -rf "$HOME/.sub";
+  ln -sf "$(pwd)/sub" "${HOME}/.sub";
+
+  echo "---> sub linked";
+
+  # installing emacs customization
+  # --------------------------------------------------------------------------- #
+  cd "$HOME/tmp/src/command-line";
+  rm -rf "$HOME/.emacs.d";
+  ln -sf "$(pwd)/emacs-custom" "${HOME}/.emacs.d";
+
+  echo "---> emacs customization done";
+
+  # installing executables in /usr/local/bin
+  # ------------------------------------------------------------------------- #
+  cd "${HOME}/tmp/src/command-line/bin";
+  mkdir "${HOME}/bin";
+  link_files "${HOME}/bin";
+
+  echo "---> bin directory linked";
 
   # installing vim customization
   # ------------------------------------------------------------------------- #
@@ -66,31 +112,8 @@ if [[ ! -d "${HOME}/.vim" ]]; then
   make;
   vim +BundleInstall +qall;
 
-  # installing zsh customization
-  # ------------------------------------------------------------------------- #
-  cd ${HOME}/tmp/src/command-line/zsh-custom;
-  rm -rf "${HOME}/.oh-my-zsh/custom";
-  ln -sf "$(pwd)/custom" "${HOME}/.oh-my-zsh";
-  link_dotfile "zshrc";
-
-  # installing sub
-  # --------------------------------------------------------------------------- #
-  cd "$HOME/tmp/src/command-line";
-  rm -rf "$HOME/.sub";
-  ln -sf "$(pwd)/sub" "${HOME}/.sub";
-
-  # installing emacs customization
-  # --------------------------------------------------------------------------- #
-  cd "$HOME/tmp/src/command-line";
-  rm -rf "$HOME/.emacs.d";
-  ln -sf "$(pwd)/emacs-custom" "${HOME}/.emacs.d";
-
-  # installing executables in /usr/local/bin
-  # ------------------------------------------------------------------------- #
-  cd "${HOME}/tmp/src/command-line/bin";
-  mkdir "${HOME}/bin";
-  link_files "${HOME}/bin";
+  echo "---> vim customization done";
 fi
 
-echo "---> my dotfiles in place"
+echo "---> all customization done"
 
