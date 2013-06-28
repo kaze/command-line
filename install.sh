@@ -99,7 +99,7 @@ if [[ ! -d "${HOME}/.vim" ]]; then
   # installing executables in /usr/local/bin
   # ------------------------------------------------------------------------- #
   cd "${HOME}/tmp/src/command-line/bin";
-  mkdir "${HOME}/bin";
+  mkdir -p "${HOME}/bin";
   link_files "${HOME}/bin";
 
   echo "---> bin directory linked";
