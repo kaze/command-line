@@ -1,0 +1,32 @@
+
+;; ----- smex-history -----
+(
+ line-number-mode
+ linum-mode
+ toggle-word-wrap
+ toggle-read-only
+ cua-mode
+ eval-buffer
+ package-install
+)
+
+;; ----- smex-data -----
+(
+ (package-install . 15)
+ (replace-regexp . 1)
+ (unhighlight-regexp . 1)
+ (highlight-regexp . 1)
+ (re-builder . 5)
+ (eval-buffer . 42)
+ (comment-region . 2)
+ (uncomment-region . 2)
+ (outline-mode . 1)
+ (hs-minor-mode . 4)
+ (org-mode . 1)
+ (hs-org/minor-mode . 3)
+ (cua-mode . 2)
+ (toggle-read-only . 2)
+ (toggle-word-wrap . 1)
+ (linum-mode . 1)
+ (line-number-mode . 1)
+)

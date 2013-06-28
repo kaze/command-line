@@ -1,0 +1,49 @@
+require 'sinatra'
+
+
+# QC::Application
+# ------------------------------------------------------------------------ #
+module QC
+  class Application < Sinatra::Application
+
+
+# configuration
+# ------------------------------------------------------------------------ #
+    configure do
+      # enable :sessions
+      use Rack::Session::Cookie, :key => 'quantycarlo_session',
+                                 :domain => 'quantycarlo.biz',
+                                 :expire_after => 2592000,
+                                 :secret => "this is the quantycarlo.biz domain's very secret hash"
+    end
+
+
+# helpers
+# ------------------------------------------------------------------------ #
+    helpers do
+      def assert(condition)
+        fail "something is terribly broken" unless condition
+      end
+    end
+
+
+# helpers
+# ------------------------------------------------------------------------ #
+    get '/' do
+      "hello world"
+    end
+
+
+# error handling
+# ------------------------------------------------------------------------ #
+    not_found do
+      "Whoops! You requested a route that wasn't available."
+    end
+
+    error do
+      "Something strange happened..."
+    end
+
+
+  end
+end

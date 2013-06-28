@@ -55,5 +55,11 @@ setprompt () {
   ZSH_THEME_TERM_TITLE_IDLE="%n on %m - %C directory"
 }
 
+set_terminal_title () {
+  ZSH_THEME_TERM_TITLE_IDLE="$1"
+  ZSH_THEME_TERM_TAB_TITLE_IDLE="$1"
+}
+alias stt="set_terminal_title"
+
 # vim: set ft=zsh:
 

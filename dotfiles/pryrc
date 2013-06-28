@@ -12,13 +12,13 @@ Pry.config.exception_handler = proc do |output, exception, _|
 end
 
 # commands
-Pry.config.commands.import Pry::ExtendedCommands::Experimental
-command_set = Pry::CommandSet.new do
-  command "clear", "Clear the screen." do
-    system 'clear'
-  end
-end
-Pry.config.commands.import command_set
+#Pry.config.commands.import Pry::ExtendedCommands::Experimental
+#command_set = Pry::CommandSet.new do
+#  command "clear", "Clear the screen." do
+#    system 'clear'
+#  end
+#end
+#Pry.config.commands.import command_set
 
 # awesome_print
 begin
@@ -54,3 +54,5 @@ if defined? Hirb
 
   Hirb.enable
 end
+
+# vim: set ft=ruby :

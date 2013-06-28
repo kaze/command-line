@@ -1,0 +1,143 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/kaze/code/work/freelance/larryrichards/quantycarlo/web/" . "quantycarlo-sinatra/")
+ ("/Users/kaze/code/work/freelance/larryrichards/" . "quantycarlo/")
+ ("/Users/kaze/code/work/freelance/" . "larryrichards/")
+ ("/Users/kaze/code/work/" . "freelance/")
+ ("/Users/kaze/.emacs.d/users/" . "kaze/")
+ ("/Users/kaze/.emacs.d/" . "users/")
+ ("/Users/" . "kaze/")
+ ("/" . "Users/")
+ ("/Users/kaze/tmp/test/yo/testbb/" . "app/")
+ ("/Users/kaze/tmp/test/yo/" . "testbb/")
+ ("/Users/kaze/tmp/test/" . "emacs/")
+ ("/Users/kaze/tmp/" . "test/")
+ ("/Users/kaze/code/work/freelance/larryrichards/quantycarlo/deployment/ansible/" . "test/")
+ ("/Users/kaze/code/work/freelance/larryrichards/quantycarlo/deployment/" . "ansible/")
+ ("/Users/kaze/code/work/freelance/larryrichards/quantycarlo/" . "web/")
+ ("/Users/kaze/code/versioned/chef/cookbooks/main/" . "recipes/")
+ ("/Users/kaze/code/versioned/chef/cookbooks/" . "main/")
+ ("/Users/kaze/code/versioned/chef/" . "cookbooks/")
+ ("/Users/kaze/code/versioned/config/home/" . "emacs.d/")
+ ("/Users/kaze/code/versioned/config/" . "home/")
+ ("/Users/kaze/code/versioned/" . "chef/")
+ ("/Users/kaze/code/versioned/config/home/emacs.d/" . "personal/")
+ ("/Users/kaze/code/" . "work/")
+ ("/Users/kaze/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/kaze/.emacs.d/users/kaze/"
+ "/Users/kaze/code/work/freelance/larryrichards/quantycarlo/web/quantycarlo-sinatra/"
+ "/ssh:bonham.netgarazs.hu:"
+ "/Users/kaze/tmp/test/emacs/"
+ "/Users/kaze/tmp/test/yo/testbb/"
+ "/Users/kaze/tmp/test/yo/testbb/app/"
+ "/Users/kaze/.emacs.d/"
+ "/Users/kaze/code/doc/notes/brew-scripts/"
+ "/Users/kaze/code/work/freelance/larryrichards/quantycarlo/deployment/ansible/"
+ "/Users/kaze/code/versioned/chef/cookbooks/main/recipes/"
+ "/Users/kaze/code/versioned/chef/"
+ "/Users/kaze/code/versioned/config/home/"
+ "/Users/kaze/code/versioned/config/home/emacs.d/personal/"
+ "/Users/kaze/code/tmp/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "app.rb"
+ "notes.el"
+ "readme.md"
+ "index.html"
+ "README.markdown"
+ "kaze.el"
+ "starter-kit-misc.el"
+ "starter-kit-defuns.el"
+ "Gruntfile.js"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/kaze/.emacs.d/users/kaze/" (20866 54191 0 0) "init.el" "hideshow-org.el" "../" "./")
+
+ ("/Users/kaze/.emacs.d/" (20866 54193 0 0) "users/" "tramp" "tar.sh" "starter-kit.el" "starter-kit-pkg.el" "starter-kit-misc.el" "starter-kit-defuns.el" "README.markdown" "places" "modules/" "init.el" "elpa/" "COPYING" "changelog.md" "backups/" "auto-save-list/" ".smex-items" ".gitignore" "../" "./")
+
+ ("/Users/kaze/" (20868 5034 0 0) "tmp/" "Sites/" "Public/" "Pictures/" "pgadmin.log" "pg_upgrade_utility.log" "pg_upgrade_server.log" "pg_upgrade_restore.log" "pg_upgrade_internal.log" "opt/" "oldvim/" "Music/" "Movies/" "Mail/" "Library/" "Google Drive/" "eightpack/" "dpd.log" "Downloads/" "Documents/" "Desktop/" "couchdb.stdout" "couchdb.stderr" "code/" "bwinPoker/" "bin/" "Applications/" ".zshrc" ".zsh_history" ".zsh-update" ".zprofile" ".zcompdump" ".yeoman/" ".xtermcontrol" ".Xauthority" ".wgetrc" ".vuescanrc" ".vnc/" ".virtualenvs/" ".vimrc" ".viminfo" ".vim/" ".vagrant.d/" ".vagrant/" ".Trash/" ".todo/" ".tmuxinator/" ".tmux.conf" ".thor/" ".textmatevimrc" ".terminitor/" ".swt/" ".swp" ".subversion/" ".sub/" ".ssh/" ".sqlite_history" ".spumux/" ".smrc" ".sm/" ".slime/" ".scala_history" ".rvmrc" ".rspec" ".rs/" ".rnd" ".ri_vim/" ".ri/" ".restclient" ".recentf" ".rdebugrc" ".rbenv/" ".Rapp.history" ".python-eggs/" ".pureload" ".psqlrc" ".psql_history-:HOST-kaze" ".psql_history" ".pryrc" ".pry_history" ".powerline-bash.py" ".powconfig" ".pow/" ".posterousrc" ".pip/" ".php_history" ".pgpass" ".pgadmin_histoqueries" ".pearrc" ".P5/" ".ohmygems" ".oh-my-zsh/" ".octave_hist" ".nvpy/" ".npmrc" ".npm/" ".node-repl_history" ".node-gyp/" ".ninja_ide/" ".netrc" ".NERDTreeBookmarks" ".mysql_history" ".mplayer/" ".mongorc.js" ".mh_profile" ".mc/" ".matplotlib/" ".MacOSX/" ".m2/" ".local/" ".lighttable/" ".lesshst" ".lein/" ".juicer/" ".jam/" ".irbrc.compiled.rbc" ".irbrc" ".irb_history" ".irb-history" ".ipython/" ".iorc" ".io_history" ".InstallAnywhere/" ".inputrc" ".inkscape-etc/" ".ido.last" ".hgignore_global" ".guard_history" ".gnupg/" ".gnome2/" ".gmail" ".gitignore_global" ".gitconfig" ".ghc/" ".gemrc" ".gem/" ".forever/" ".foreui/" ".fonts.cache-1" ".fonts/" ".fontconfig/" ".Extensis/" ".erlang.cookie" ".erc/" ".emacs.d/" ".dvdcss/" ".dropbox/" ".dnsimple" ".dbvis/" ".dbshell" ".cvspass" ".cups/" ".ctags" ".config/" ".com.yoxos.update.fingerprint" ".codeintel/" ".claws.yml" ".cheat/" ".CFUserTextEncoding" ".CF89AA64" ".caprc" ".cache/" ".cabal/" ".bzr.log" ".bower/" ".bdsm/" ".bashrc" ".bash_history" ".aws/" ".autotest" ".asadmintruststore" ".asadminpass" ".ansible_test_module_arguments" ".adobe/" ".AB64CF89" "../" "./")
+
+ ("/Users/kaze/code/work/freelance/larryrichards/quantycarlo/web/quantycarlo-sinatra/" (20866 53907 0 0) "views/" "tmp/" "spec/" "README.md" "public/" "lib/" "Guardfile" "Gemfile.lock" "Gemfile" "features/" "config.ru" "app.rb" ".git/" "../" "./")
+
+ ("/Users/kaze/code/work/freelance/larryrichards/quantycarlo/web/" (20864 59564 0 0) "www_qc_com_app/" "quantycarlo-sinatra/" "quantycarlo-rails/" "quantycarlo-com/" "iotatx-com/" "fs-test-app/" "docs/" "canvas-test/" "../" "./")
+
+ ("/Users/kaze/code/work/freelance/larryrichards/quantycarlo/" (20854 11845 0 0) "xml2english/" "web/" "docs/" "deployment/" "../" "./")
+
+ ("/Users/kaze/code/work/freelance/larryrichards/" (20533 21746 0 0) "quantycarlo/" "../" "./")
+
+ ("/Users/kaze/code/work/freelance/" (20849 2033 0 0) "script to backup postgres database/" "ryan/" "oroszantal.zip" "oroszantal/" "odesk/" "larryrichards/" "../" "./")
+
+ ("/Users/kaze/code/work/" (20800 62452 0 0) "workimages/" "web/" "static/" "freelance/" "clients/" "_util/" "_doc/" "_databup/" "../" "./")
+
+ ("/Users/kaze/code/" (20801 7961 0 0) "work/" "lib/" "Google Drive/" "Dropbox/" "doc/" "data/" "Box Documents/" "bin/" "../" "./")
+
+ ("/Users/kaze/tmp/test/emacs/" (20862 50497 0 0) "readme.md" "notes.el" "../" "./")
+
+ ("/Users/kaze/tmp/test/" (20860 52020 0 0) "yo/" "vim/" "emberjs/" "emacs/" "clojure/" "../" "./")
+
+ ("/Users/kaze/tmp/test/yo/testbb/app/" (20858 57919 0 0) "styles/" "scripts/" "robots.txt" "index.html" "images/" "favicon.ico" "components/" "404.html" ".htaccess" "#index.html#" "../" "./")
+
+ ("/Users/kaze/.emacs.d/users/" (20858 43549 0 0) "kaze/" "../" "./")
+
+ ("/Users/" (20605 26956 0 0) "Shared/" "kaze/" "Deleted Users/" ".localized" "../" "./")
+
+ ("/Applications/" (20840 61170 0 0) "WebKit.app/" "VirtualBox.app/" "Vagrant/" "Utilities/" "util/" "Suitcase Fusion 2.app/" "Server.app/" "Server/" "security/" "Scarlett.app/" "office and text/" "Microsoft Silverlight/" "media/" "MAMP PRO/" "MAMP/" "internet/" "Google Chrome Canary.app/" "games/" "Firefox.app/" "drawing/" "dev/" "Cambridge/" "biz/" "adobe/" "accessories/" "../" "./")
+
+ ("/Applications/dev/" (20857 41589 0 0) "Xcode.app/" "weinre.app/" "Vitamin-R.app/" "VirtualHostX.app/" "Vico.app/" "Versions.app/" "Tower.app/" "TextMate.app/" "Sublime Text.app/" "Sublime Text 2.app/" "SublHandler.app/" "Structurer Pro.app/" "Structurer Menu.app/" "standaloneWebkit/" "SQLite Database Browser 2.0 b1.app/" "SourceTree.app/" "SmartGit.app/" "Smaller.app/" "skEdit.app/" "SharedPlan Pro.app/" "Sencha Animator.app/" "sencha/" "scrutiny.app/" "Script Debugger.app/" "scitools/" "Rested.app/" "RegExr.app/" "RazorSQL.app/" "R64.app/" "R.app/" "Processing.app/" "preFab.app/" "Postgres.app/" "Poedit.app/" "plecs/" "PhpStorm 2.1.app/" "pgAdmin3.app/" "Pacu.app/" "Octave.app/" "Ninja IDE.app/" "Nettuts+ Builder.app/" "Navicat Premium.app/" "Navicat for SQLite.app/" "Mou.app/" "Merlin.app/" "Mathematica.app/" "LogoDesignStudio Pro/" "LiveReload.app/" "Lingon.app/" "LightTable.app/" "JewelryBox.app/" "iTerm.app/" "Induction.app/" "Hype.app/" "Gradient.app/" "Glyphs.app/" "GitX.app/" "GitHub.app/" "Gitbox.app/" "Frank DeLoupe.app/" "FontPrep.app/" "Fire.app/" "FileMaker Pro 11 Advanced/" "Fake.app/" "Emacs.app/" "DTerm.app/" "DiffFork.app/" "DbVisualizer-8.0.11.app/" "ColorSchemer Studio 2.app/" "CodeKit.app/" "Coda.app/" "Coda 2.app/" "Cocui.app/" "Chocolat.app/" "Brackets Sprint 14.app/" "Balsamiq Mockups.app/" "Axure RP Pro 6.app/" "Automator.app/" "Art Directors Toolkit.app/" "Aquamacs.app/" "Anvil.app/" "Antetype.app/" "Acorn.app/" "../" "./")
+
+ ("/Applications/dev/Emacs.app/" (20799 63689 0 0) "Contents/" "../" "./")
+
+ ("/Applications/dev/Emacs.app/Contents/" (20800 246 0 0) "Resources/" "PkgInfo" "MacOS/" "Info.plist" "CodeSignature" "CodeResources" "CodeRequirements" "CodeDirectory" "_CodeSignature/" "../" "./")
+
+ ("/Applications/dev/Emacs.app/Contents/Resources/" (20799 63782 0 0) "var/" "site-lisp/" "man/" "lisp/" "leim/" "info/" "etc/" "English.lproj/" "Emacs.icns" "document.icns" "Credits.html" "../" "./")
+
+ ("/Applications/dev/Emacs.app/Contents/Resources/info/" (20799 63712 0 0) "woman.info.gz" "wisent.info.gz" "widget.info.gz" "viper.info.gz" "vip.info.gz" "url.info.gz" "tramp.info.gz" "srecode.info.gz" "speedbar.info.gz" "smtpmail.info.gz" "sieve.info.gz" "ses.info.gz" "semantic.info.gz" "sc.info.gz" "sasl.info.gz" "remember.info.gz" "reftex.info.gz" "rcirc.info.gz" "pgg.info.gz" "pcl-cvs.info.gz" "org.info.gz" "nxml-mode.info.gz" "newsticker.info.gz" "mh-e.info.gz" "message.info.gz" "mairix-el.info.gz" "info.info.gz" "idlwave.info.gz" "htmlfontify.info.gz" "gnus.info.gz" "forms.info.gz" "flymake.info.gz" "eudc.info.gz" "eshell.info.gz" "ert.info.gz" "erc.info.gz" "epa.info.gz" "emacs.info.gz" "emacs-mime.info.gz" "emacs-gnutls.info.gz" "elisp.info.gz" "eintr.info.gz" "eieio.info.gz" "efaq.info.gz" "edt.info.gz" "ediff.info.gz" "ede.info.gz" "ebrowse.info.gz" "dired-x.info.gz" "dir" "dbus.info.gz" "cl.info.gz" "ccmode.info.gz" "calc.info.gz" "bovine.info.gz" "autotype.info.gz" "auth.info.gz" "ada-mode.info.gz" "../" "./")
+
+ ("/Users/kaze/tmp/test/yo/testbb/" (20853 44445 0 0) "test/" "package.json" "node_modules/" "Gruntfile.js" "component.json" "app/" ".tmp/" ".sass-cache/" ".jshintrc" ".gitignore" ".gitattributes" ".editorconfig" ".bowerrc" "../" "./")
+
+ ("/Users/kaze/tmp/test/yo/" (20838 21523 0 0) "testbb/" ".jshintrc" ".gitignore" ".gitattributes" ".editorconfig" ".bowerrc" "../" "./")
+
+ ("/Users/kaze/tmp/" (20841 25021 0 0) "test/" "src/" "../" "./")
+
+ ("/Users/kaze/code/work/freelance/larryrichards/quantycarlo/deployment/ansible/" (20856 56509 0 0) "webservers.yml" "Vagrantfile" "test.yml" "test/" "roles/" "README.md" "quantycarlo.yml" "playbooks/" "library/" "hosts" "gitservers.yml" "devservers.yml" "appservers.yml" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/kaze/code/doc/notes/brew-scripts/" (20843 43006 0 0) "brew.txt" "binstaller" "../" "./")
+
+ ("/Users/kaze/code/work/freelance/larryrichards/quantycarlo/deployment/ansible/test/" (20823 9460 0 0) "ansible/" "../" "./")
+
+ ("/Users/kaze/code/work/freelance/larryrichards/quantycarlo/deployment/" (20815 62090 0 0) "vendor/" "chef/" "ansible/" "../" "./")
+
+ ("/Users/kaze/code/tmp/" (20682 61081) "zsh/" "zartkor.css" "yeoman/" "wwup/" "wwtcps/" "wget.log" "vimtest/" "vim/" "viktoria/" "venvsrc/" "valami.txt" "vagrant/" "user.log" "tutsplus/" "thortest/" "testfirst/" "test1.rb.html" "test1.rb" "test.script" "test.html" "test-project/" "swg/" "svn.quantycarlo.biz/" "sur/" "sub/" "stext/" "stasistest/" "src/" "sprockettest/" "spinetest/" "sodwr/" "sites/" "simbl/" "services/" "seleniumtest/" "saasclass/" "rvm_tm_test.rb" "rvm-install-system-wide" "rubywarrior/" "rubymotion/" "rubydoc/" "ruby/" "rrdtooltest/" "ror-ecommerce/" "robbyrussell/" "rails/" "quantycarlo/" "qc/" "osx-plist/" "norbipython/" "norbi/" "nodetest/" "ninjaeditor/" "nginx/" "nextorder/" "nerdtreeaddtest.html" "meteortest/" "metaruby/" "macruby/" "mac/" "lua/" "light-table/" "krush/" "kotest/" "kazetest/" "jstest/" "index.html" "html/" "haskell/" "gemlist.txt" "fishtest/" "firstcpp/" "exttest/" "euler/" "emacs-tutorial~" "emacs-tutorial" "eloqjs/" "dori/" "docsplit/" "deploydtest/" "dbmtest/" "dashing/" "d4ead826a729e481f4b4" "csstest/" "colors" "coffeetest/" "codeplane/" "codekit/" "codecademy/" "codebase/" "c/" "angulartest/" "addyosmani/" "../" "./")
+
+ ("/Users/kaze/code/versioned/config/home/emacs.d/personal/" (20185 25260) "custom.el" ".gitkeep" "../" "./")
+
+ ("/Users/kaze/code/versioned/config/home/" (20587 25184) "zshrc" "wgetrc" "vimrc.before" "vimrc.after" "tmux.conf" "ssh/" "shell/" "rvmrc" "rush/" "rspec" "pryrc" "pry/" "powerline-bash.py" "pgpass" "oh-my-zsh/" "NERDTreeBookmarks" "my.cnf" "login" "livereload" "janus-vim/" "janus-own/" "irbrc" "install.rb" "inputrc" "heroku/" "gvimrc.after" "gitignore_global" "gitignore" "gitconfig" "gemrc" "Gemfile.lock" "gemfile" "emacs.d/" "dir_colors" "consularc" "config/" "compass/" "calendar/" "bashrc" "bash_profile" "../" "./")
+
+ ("/Users/kaze/code/versioned/chef/cookbooks/main/recipes/" (20688 53934) "default.rb" "#default.rb#" "../" "./")
+
+ ("/Users/kaze/code/versioned/chef/cookbooks/main/" (20556 40763) "templates/" "recipes/" "../" "./")
+
+ ("/Users/kaze/code/versioned/chef/cookbooks/" (20554 61142) "main/" "../" "./")
+
+ ("/Users/kaze/code/versioned/chef/" (20597 63673) "testy/" "solo.rb" "README.md" "jsons/" "install.sh" "docs/" "deploy.sh" "cookbooks/" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/kaze/code/versioned/" (20688 35252) "ugyvitel/" "remove_svn_dirs.rb" "private/" "lib/" "install.rb" "github-command-line/" "gitblog/" "config/" "command-line/" "chef-bootstrap/" "chef/" "bin/" "../" "./")
+
+ ("/Users/kaze/code/versioned/config/" (20458 8639) "svn.txt" "remote/" "notes/" "home/" "gitrm.rb" "apache/" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/kaze/code/versioned/config/home/emacs.d/" (20185 25005) "vendor/" "themes/" "saveplace" "savehist" "samples/" "recentf" "README.md" "personal/" "modules/" "init.el" "elpa/" "auto-save-list/" ".gitignore" ".git/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

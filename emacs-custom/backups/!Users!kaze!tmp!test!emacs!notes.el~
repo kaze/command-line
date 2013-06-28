@@ -1,0 +1,57 @@
+;; This buffer is for notes you don't want to save, and for Lisp evaluation.
+;; If you want to create a file, visit that file with C-x C-f,
+;; then enter the text in that file's own buffer.
+
+(buffer-name)         ;=> "*scratch*"
+(buffer-file-name)    ;=> nil
+(other-buffer)        ;=> #<buffer*info*>
+(switch-to-buffer (other-buffer))
+(buffer-size)         ;=> 358
+(point)               ;=> 360
+(point-min)           ;=> 1
+(point-max)           ;=> 1662
+(current-buffer)      ;=> #<buffer notes.el>
+
+
+;; eval-last-sexp c-x c-e
+;; b : the name of an existing buffer
+;; f : the name of an existing file
+;; p : the numeric prefix argument
+;; r : point and the mark, as two numeric arguments, smallest first
+
+
+;; defining a function
+(defun FUNCTION-NAME (ARGUMENTS...)
+       "OPTIONAL-DOCUMENTATION..."
+       (interactive ARGUMENT-PASSING-INFO)     ; optional
+       BODY...)
+
+
+;; if-else-then construct
+;; everything is true except nil
+(defun type-of-animal (characteristic)  ; Second version.
+       "Print message in echo area depending on CHARACTERISTIC.
+     If the CHARACTERISTIC is the symbol 'fierce',
+     then warn of a tiger;
+     else say it's not fierce."
+       (if (equal characteristic 'fierce)
+           (message "It's a tiger!")
+         (message "It's not fierce!")))
+
+
+;; save excursion
+;; record the values of point and mark and the current buffer
+;; before evaluating the body of this special form. restore the
+;; values afterward.
+(defun FUNCTION-NAME (ARGUMENTS...)
+       "OPTIONAL-DOCUMENTATION..."
+       (interactive ARGUMENT-PASSING-INFO)     ; optional
+       BODY...)
+
+
+;; let expression: function-local setq
+(let VARLIST
+       (save-excursion
+         BODY...))
+
+

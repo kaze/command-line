@@ -2,8 +2,8 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="kaze"
 
 # Example aliases
-alias zshconfig="mvim ~/.zshrc"
-alias ohmyzsh="mvim ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 
 plugins=(bundler git rvm venv_activator kaze)
 
@@ -11,7 +11,7 @@ source $ZSH/oh-my-zsh.sh
 for config_file ($ZSH/custom/init/*.sh) source $config_file
 
 # emacs keybindings:
-bindkey -v
+bindkey -e
 
 clear
 

@@ -39,13 +39,6 @@ function link_files() {
 
 # downloads
 # --------------------------------------------------------------------------- #
-if [[ ! -d "${HOME}/.vim" ]]; then
-  # installing vim
-  curl -Lo- https://bit.ly/janus-bootstrap | bash;
-fi
-
-echo "---> janus-vim installed"
-
 if [[ ! -d "${HOME}/.oh-my-zsh" ]]; then
   # installing zsh
   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
@@ -54,9 +47,10 @@ fi
 
 echo "---> oh-my-zsh installed"
 
-if [[ ! -f "${HOME}/.vimrc.before" ]]; then
+if [[ ! -d "${HOME}/.vim" ]]; then
   # downloading files for customization
   mkdir -p ${HOME}/tmp/src && cd ${HOME}/tmp/src;
+  rm -rf command-line;
   git clone https://github.com/kaze/command-line.git;
 
   # installing other dotfiles
@@ -66,17 +60,11 @@ if [[ ! -f "${HOME}/.vimrc.before" ]]; then
 
   # installing vim customization
   # ------------------------------------------------------------------------- #
-  cd ${HOME}/tmp/src/command-line/vim-custom/janus;
-
-  # ...cloning repos...
-  while read -r repo
-  do
-    git clone ${repo}
-  done < "./gitlist.txt"
-
-  # linking files
-  cd ${HOME}/tmp/src/command-line/vim-custom;
-  link_dotfiles;
+  cd ${HOME}/tmp/src/command-line;
+  ln -sf "$(pwd)/vim" "${HOME}/.vim";
+  cd ${HOME}/tmp/src/command-line/vim;
+  make;
+  vim +BundleInstall +qall;
 
   # installing zsh customization
   # ------------------------------------------------------------------------- #
@@ -85,9 +73,21 @@ if [[ ! -f "${HOME}/.vimrc.before" ]]; then
   ln -sf "$(pwd)/custom" "${HOME}/.oh-my-zsh";
   link_dotfile "zshrc";
 
+  # installing sub
+  # --------------------------------------------------------------------------- #
+  cd "$HOME/tmp/src/command-line";
+  rm -rf "$HOME/.sub";
+  ln -sf "$(pwd)/sub" "${HOME}/.sub";
+
+  # installing emacs customization
+  # --------------------------------------------------------------------------- #
+  cd "$HOME/tmp/src/command-line";
+  rm -rf "$HOME/.emacs.d";
+  ln -sf "$(pwd)/emacs-custom" "${HOME}/.emacs.d";
+
   # installing executables in /usr/local/bin
   # ------------------------------------------------------------------------- #
-  cd ${HOME}/tmp/src/command-line/bin;
+  cd "${HOME}/tmp/src/command-line/bin";
   mkdir "${HOME}/bin";
   link_files "${HOME}/bin";
 fi

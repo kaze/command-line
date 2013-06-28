@@ -4,3 +4,5 @@
 # alapértelmezett szövegfájl-szerkesztő
 # --------------------------------------------------------------------------- #
 export EDITOR='vim'
+
+

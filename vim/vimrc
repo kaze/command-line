@@ -1,0 +1,411 @@
+" basic settings 
+" ------------------------------------------------------------------- "
+set nocompatible	      " vi compatibility is off
+set encoding=utf-8      " set default encoding to utf-8
+set ruler               " show line and column number
+syntax enable           " turn on syntax highlighting
+colorscheme smyck
+set cursorline          " highlight the current line
+set number		          " line numbering is on
+set mouse=a             " for using mouse in terminal (shame...)
+set more		            " more-like paging is on
+set splitbelow          " new vertical split opens below
+set splitright          " new horizontal split opens right
+set autoread            " reloads files that changed outside of vim
+set autowrite           " saves modified file if it is lost focus
+set clipboard+=unnamed  " you can yank to and paste the selection
+set pastetoggle=<f5>    " for pasting large chunks of text
+set formatoptions-=o    " don't continue comments when pushing o/O
+set isfname+=32         " could be space in filenames
+set history=1000        " store lots of :cmdline history
+set showcmd             " show incomplete cmds down the bottom
+set showmode            " show current mode down the bottom
+set linebreak           " wrap lines at convenient points
+set backupdir^=~/.vim/_backup//    " where to put backup files
+set directory^=~/.vim/_temp//      " where to put swap files
+set backspace=indent,eol,start
+set formatoptions-=o    " don't continue comments when pushing o/O
+set scrolloff=3         " vertical/horizontal scroll off settings
+set sidescrolloff=7     " vertical/horizontal scroll off settings
+set sidescroll=1        " vertical/horizontal scroll off settings
+set t_Co=256            " tell the term has 256 colors
+set hidden              " hide buffers when not displayed
+set modeline            " for setting file type in file's header
+set modelines=5         " for setting file type in file's header
+set fillchars=stl:\ ,stlnc:\ ,vert:\|,fold:-,diff:-
+set wrap                " wrap long lines
+set textwidth=78        " wrap at column 78
+
+
+" statusline 
+" -------------------------------------------------------------------- "
+if has("statusline") && !&cp
+  set laststatus=2  " always show the status bar
+
+  " start the status line
+  set statusline=buf:#%02n
+  set statusline+=\ %-20F\ %m\ %r
+  set statusline+=%=
+  set statusline+=%y
+  set statusline+=\ line:%04l/%04L\ [%03p%%]
+  set statusline+=\ -\ col:%03v
+  set statusline+=\ -\ [%b][0x%B]
+endif
+
+
+" indentation settings 
+" -------------------------------------------------------------------- "
+set autoindent          " copy indent from current line when starting a new line
+set expandtab		        " use spaces instead of tabs to indent
+set tabstop=2   	      " 2 spaces instead of tab character
+set shiftwidth=2        " number of spaces to use for each step of (auto)indent
+set shiftround		      " round indent to multiple of shiftwidth
+
+
+" searching 
+" -------------------------------------------------------------------- "
+set hlsearch            " highlight matches
+set incsearch           " incremental searching
+set ignorecase          " searches are case insensitive...
+set smartcase           " ... unless they contain at least one capital letter
+
+
+" wild settings 
+" -------------------------------------------------------------------- "
+set wildmenu            " enable ctrl-n and ctrl-p to scroll thru matches
+
+" TODO: investigate the precise meaning of these settings
+" set wildmode=list:longest,list:full
+
+" disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+
+" disable archive files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+
+" ignore bundler and sass cache
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+
+" disable temp and backup files
+set wildignore+=*.swp,*~,._*
+
+
+" folding 
+" -------------------------------------------------------------------- "
+set foldmethod=expr     " fold based on indent
+set foldnestmax=10      " deepest fold is 10 levels
+set nofoldenable        " does not fold by default
+
+" fold all lines until two consecutive empty ones
+set foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'^\\s*$'?'<1':1
+
+" folding in coffeescript files
+augroup filetype_coffee
+  autocmd!
+  autocmd FileType coffeescript setl foldmethod=indent
+augroup END
+
+" folding in python files
+augroup filetype_python
+  autocmd!
+  autocmd FileType python setl foldmethod=indent
+augroup END
+
+" folding in vim files
+augroup filetype_vim
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=expr
+augroup END
+
+
+" vim specific custom mappings 
+" -------------------------------------------------------------------- "
+let mapleader=","
+let maplocalleader=",,"
+
+" convert word to uppercase with ctrl-u
+inoremap <c-u> <esc>viwUwa
+
+" f1 for help
+noremap <f1> <esc>:exec "help ".expand("<cword>")<cr>
+
+" control-arrow combination for browsing the buffer
+noremap <c-right> <esc>:bn<cr>
+noremap <c-left> <esc>:bp<cr>
+
+" open included file in a new buffer
+noremap gf :edit <cfile><cr>
+
+" tabbing between windows with tab key:
+nnoremap <Tab> <C-w><C-w>
+
+" remap space to :
+nnoremap <space> :
+
+" editing and reloading .vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" go to the beginning/end of line
+nnoremap H 0
+nnoremap L $
+
+" wraps the previous word in " or '
+nnoremap <leader>" hviw<esc>a"<esc>hbi"<esc>lela
+nnoremap <leader>' hviw<esc>a'<esc>hbi'<esc>lela
+
+" remap j and k to move by lines instead of rows (wrapped rows!)
+nnoremap j gj
+nnoremap k gk
+
+" unsets the 'last search pattern' register by hitting return
+nnoremap <leader><backspace> :noh<CR><CR>
+
+" folding with tab key
+nnoremap <enter> za
+
+" open in Marked.app
+nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+
+" add movement operators
+onoremap p i(
+onoremap " i"
+onoremap ' i'
+onoremap { i{
+onoremap [ i[
+
+" wraps the visual selection in " or '
+vnoremap " d<esc>i"<esc>pa"
+vnoremap ' d<esc>i'<esc>pa'
+
+" alternative method using tab/shift-tab
+vnoremap <tab> >gv
+vnoremap <s-tab> <gv
+
+
+" abbreviations 
+" -------------------------------------------------------------------- "
+inoreabbrev teh the
+inoreabbrev adn and
+cnoreabbrev W w
+cnoreabbrev Wq wq
+cnoreabbrev WQ wQ
+cnoreabbrev Q q
+
+
+" vundle setup 
+" -------------------------------------------------------------------- "
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" vundle
+Bundle 'gmarik/vundle'
+
+" tools
+Bundle 'git://github.com/Townk/vim-autoclose.git'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'scrooloose/nerdtree'
+Bundle 'http://github.com/mattn/zencoding-vim/'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'git://github.com/godlygeek/tabular.git'
+Bundle 'git://github.com/tpope/vim-commentary.git'
+Bundle 'git://github.com/nathanaelkane/vim-indent-guides.git'
+Bundle 'git://github.com/tpope/vim-ragtag.git'
+Bundle 'git://github.com/tpope/vim-rake.git'
+Bundle 'git://github.com/tpope/vim-bundler.git'
+Bundle 'git://github.com/tpope/vim-repeat.git'
+Bundle 'git://github.com/tpope/vim-rvm.git'
+Bundle 'git://github.com/mattn/zencoding-vim.git'
+Bundle 'git://github.com/ap/vim-css-color.git'
+Bundle 'git://github.com/tpope/vim-endwise.git'
+Bundle 'git://github.com/tpope/vim-fugitive.git'
+Bundle 'git://github.com/mattn/gist-vim.git'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'honza/vim-snippets'
+Bundle 'garbas/vim-snipmate'
+Bundle 'git://github.com/tpope/vim-surround.git'
+Bundle 'git://github.com/scrooloose/syntastic.git'
+Bundle 'git://github.com/tpope/vim-unimpaired.git'
+Bundle 'skalnik/vim-vroom'
+Bundle 'git://github.com/mattn/webapi-vim.git'
+Bundle 'git://github.com/clones/vim-zsh.git'
+Bundle 'git://github.com/vim-scripts/netrw.vim.git'
+Bundle 'git://github.com/rking/ag.vim.git'
+Bundle 'git://github.com/terryma/vim-multiple-cursors.git'
+
+" after installation, go to YouCompleteMe folder and run:
+" ./install.sh --clang-completer
+" Bundle 'git://github.com/Valloric/YouCompleteMe.git'
+
+" font: use 14pt Source Code Pro for Powerline
+Bundle 'git://github.com/Lokaltog/powerline.git'
+
+" languages
+Bundle 'vim-coffee-script'
+Bundle 'git://github.com/vim-scripts/csv.vim.git'
+Bundle 'git://github.com/tpope/vim-cucumber.git'
+Bundle 'git://github.com/nono/vim-handlebars.git'
+Bundle 'git://github.com/wlangstroth/vim-haskell.git'
+Bundle 'git://github.com/pangloss/vim-javascript.git'
+Bundle 'git://github.com/tpope/vim-markdown.git'
+Bundle 'https://github.com/sunaku/vim-ruby-minitest'
+Bundle 'git://github.com/juvenn/mustache.vim.git'
+Bundle 'git://github.com/myhere/vim-nodejs-complete.git'
+Bundle 'git://github.com/tpope/vim-rails.git'
+Bundle 'git://github.com/thoughtbot/vim-rspec.git'
+Bundle 'git://github.com/vim-ruby/vim-ruby.git'
+Bundle 'git://github.com/cakebaker/scss-syntax.vim.git'
+Bundle 'git://github.com/slim-template/vim-slim.git'
+Bundle 'git://github.com/timcharper/textile.vim.git'
+Bundle 'git://github.com/edliaw/vim-python.git'
+Bundle 'git://github.com/vim-scripts/VimClojure.git'
+Bundle 'slimv.vim'
+
+filetype plugin indent on
+
+
+" fuzzyfinder options 
+" ------------------------------------------------------------------- "
+let g:fuf_dataDir="~/.vim/_vim-fuf-data"
+
+" mappings
+nnoremap ,fb :FufBuffer<CR>
+nnoremap ,fc :FufCoverageFile<CR>
+nnoremap ,fd :FufDir<CR>
+nnoremap ,ff :FufFile<CR>
+nnoremap ,ffd :FufFileWithCurrentBufferDir<CR>
+nnoremap ,fh :FufHelp<CR>
+nnoremap ,fl :FufLine<CR>
+nnoremap ,ft :FufTaggedFile<CR>
+
+
+" nerdtree options 
+" ------------------------------------------------------------------- "
+let NERDTreeShowHidden=1
+let NERDTreeShowBookmarks=1000
+let NERDTreeChDirMode=2
+" let NERDTreeQuitOnOpen=1    " close NerdTree if file opened
+nnoremap <leader>b :NERDTreeToggle<cr>
+
+
+" vim-rspec options 
+" ------------------------------------------------------------------- "
+" let g:rspec_command = "!rspec --drb {spec}"
+noremap <Leader>t :call RunCurrentSpecFile()<CR>
+noremap <Leader>s :call RunNearestSpec()<CR>
+noremap <Leader>l :call RunLastSpec()<CR>
+
+
+" tabularize settings 
+" -------------------------------------------------------------------------- "
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+
+
+" indent guides plugin 
+" -------------------------------------------------------------------------- "
+au VimEnter * :IndentGuidesEnable
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_color_change_percent = 2
+
+if !has("gui")
+  let g:indent_guides_auto_colors = 0
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=236
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
+endif
+
+
+" autoclose 
+" -------------------------------------------------------------------------- "
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}', '|':'|' }
+let g:AutoCloseProtectedRegions = ["Character"]
+
+
+" unimpaired settings 
+" -------------------------------------------------------------------------- "
+" bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+
+" bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
+
+" indent guides plugin 
+" -------------------------------------------------------------------------- "
+au VimEnter * :IndentGuidesEnable
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_color_change_percent = 2
+
+if !has("gui")
+  let g:indent_guides_auto_colors = 0
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=236
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
+endif
+
+
+" powerline options 
+" -------------------------------------------------------------------------- "
+" setlocal noexpandtab
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+let g:Powerline_symbols = 'fancy'
+let g:syntastic_python_flake8_args = '--ignore=W191,E501,E121,E122,E123,E128,E225,W291'
+
+" redraw statusline
+au VimEnter * redrawstatus!
+
+
+" rcodetools options 
+" ------------------------------------------------------------------- "
+" plain annotations
+map <silent> <F10> !xmpfilter -a<cr>
+nmap <silent> <F10> V<F2>
+imap <silent> <F10> <ESC><F2>a
+
+" Test::Unit assertions; use -s to generate RSpec expectations instead
+map <silent> <S-F10> !xmpfilter -u<cr>
+nmap <silent> <S-F10> V<S-F10>
+imap <silent> <S-F10> <ESC><S-F10>a
+
+" Annotate the full buffer
+" I actually prefer ggVG to %; it's a sort of poor man's visual bell 
+nmap <silent> <F11> mzggVG!xmpfilter -a<cr>'z
+imap <silent> <F11> <ESC><F11>
+
+" assertions
+nmap <silent> <S-F11> mzggVG!xmpfilter -u<cr>'z
+imap <silent> <S-F11> <ESC><S-F11>a
+
+" Add # => markers
+vmap <silent> <F12> !xmpfilter -m<cr>
+nmap <silent> <F12> V<F12>
+imap <silent> <F12> <ESC><F12>a
+
+" Remove # => markers
+vmap <silent> <S-F12> ms:call RemoveRubyEval()<CR>
+nmap <silent> <S-F12> V<S-F12>
+imap <silent> <S-F12> <ESC><S-F12>a
+
+function! RemoveRubyEval() range
+  let begv = a:firstline
+  let endv = a:lastline
+  normal Hmt
+  set lz
+  execute ":" . begv . "," . endv . 's/\s*# \(=>\|!!\).*$//e'
+  normal 'tzt`s
+  set nolz
+  redraw
+endfunction
