@@ -17,7 +17,7 @@ PATH="${PATH}:${HOME}/code/bin"
 
 # sub
 # --------------------------------------------------------------------------- #
-eval "$(/Users/kaze/.sub/bin/sub init -)"
+eval "$(${HOME}/.sub/bin/sub init -)"
 
 
 # and then finally export the path variable:
