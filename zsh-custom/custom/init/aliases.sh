@@ -14,6 +14,7 @@ alias xmod="chmod +x "
 alias c="clear"
 alias stt='set_terminal_title'
 alias vdir='vdir --color'
+alias duck='du -cks * | sort -rn | head -10'
 
 
 # tmux
