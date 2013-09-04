@@ -1,4 +1,4 @@
-" basic settings 
+" basic settings
 " ------------------------------------------------------------------- "
 set nocompatible	      " vi compatibility is off
 set encoding=utf-8      " set default encoding to utf-8
@@ -23,6 +23,7 @@ set showmode            " show current mode down the bottom
 set linebreak           " wrap lines at convenient points
 set backupdir^=~/.vim/_backup//    " where to put backup files
 set directory^=~/.vim/_temp//      " where to put swap files
+set backupskip=/tmp/*,/private/tmp/* " do not create backup files for tempfiles
 set backspace=indent,eol,start
 set formatoptions-=o    " don't continue comments when pushing o/O
 set scrolloff=3         " vertical/horizontal scroll off settings
@@ -37,7 +38,7 @@ set wrap                " wrap long lines
 set textwidth=78        " wrap at column 78
 
 
-" statusline 
+" statusline
 " -------------------------------------------------------------------- "
 if has("statusline") && !&cp
   set laststatus=2  " always show the status bar
@@ -53,7 +54,7 @@ if has("statusline") && !&cp
 endif
 
 
-" indentation settings 
+" indentation settings
 " -------------------------------------------------------------------- "
 set autoindent          " copy indent from current line when starting a new line
 set expandtab		        " use spaces instead of tabs to indent
@@ -62,7 +63,7 @@ set shiftwidth=2        " number of spaces to use for each step of (auto)indent
 set shiftround		      " round indent to multiple of shiftwidth
 
 
-" searching 
+" searching
 " -------------------------------------------------------------------- "
 set hlsearch            " highlight matches
 set incsearch           " incremental searching
@@ -70,7 +71,7 @@ set ignorecase          " searches are case insensitive...
 set smartcase           " ... unless they contain at least one capital letter
 
 
-" wild settings 
+" wild settings
 " -------------------------------------------------------------------- "
 set wildmenu            " enable ctrl-n and ctrl-p to scroll thru matches
 
@@ -90,7 +91,7 @@ set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 set wildignore+=*.swp,*~,._*
 
 
-" folding 
+" folding
 " -------------------------------------------------------------------- "
 set foldmethod=expr     " fold based on indent
 set foldnestmax=10      " deepest fold is 10 levels
@@ -118,7 +119,7 @@ augroup filetype_vim
 augroup END
 
 
-" vim specific custom mappings 
+" vim specific custom mappings
 " -------------------------------------------------------------------- "
 let mapleader=","
 let maplocalleader=",,"
@@ -183,7 +184,7 @@ vnoremap <tab> >gv
 vnoremap <s-tab> <gv
 
 
-" abbreviations 
+" abbreviations
 " -------------------------------------------------------------------- "
 inoreabbrev teh the
 inoreabbrev adn and
@@ -193,7 +194,7 @@ cnoreabbrev WQ wQ
 cnoreabbrev Q q
 
 
-" vundle setup 
+" vundle setup
 " -------------------------------------------------------------------- "
 filetype off
 
@@ -268,7 +269,7 @@ Bundle 'slimv.vim'
 filetype plugin indent on
 
 
-" fuzzyfinder options 
+" fuzzyfinder options
 " ------------------------------------------------------------------- "
 let g:fuf_dataDir="~/.vim/_vim-fuf-data"
 
@@ -283,7 +284,7 @@ nnoremap ,fl :FufLine<CR>
 nnoremap ,ft :FufTaggedFile<CR>
 
 
-" nerdtree options 
+" nerdtree options
 " ------------------------------------------------------------------- "
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1000
@@ -292,7 +293,7 @@ let NERDTreeChDirMode=2
 nnoremap <leader>b :NERDTreeToggle<cr>
 
 
-" vim-rspec options 
+" vim-rspec options
 " ------------------------------------------------------------------- "
 " let g:rspec_command = "!rspec --drb {spec}"
 noremap <Leader>t :call RunCurrentSpecFile()<CR>
@@ -300,7 +301,7 @@ noremap <Leader>s :call RunNearestSpec()<CR>
 noremap <Leader>l :call RunLastSpec()<CR>
 
 
-" tabularize settings 
+" tabularize settings
 " -------------------------------------------------------------------------- "
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
@@ -310,7 +311,7 @@ if exists(":Tabularize")
 endif
 
 
-" indent guides plugin 
+" indent guides plugin
 " -------------------------------------------------------------------------- "
 au VimEnter * :IndentGuidesEnable
 let g:indent_guides_start_level = 2
@@ -325,13 +326,13 @@ if !has("gui")
 endif
 
 
-" autoclose 
+" autoclose
 " -------------------------------------------------------------------------- "
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}', '|':'|' }
 let g:AutoCloseProtectedRegions = ["Character"]
 
 
-" unimpaired settings 
+" unimpaired settings
 " -------------------------------------------------------------------------- "
 " bubble single lines
 nmap <C-Up> [e
@@ -342,7 +343,7 @@ vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
 
-" indent guides plugin 
+" indent guides plugin
 " -------------------------------------------------------------------------- "
 au VimEnter * :IndentGuidesEnable
 let g:indent_guides_start_level = 2
@@ -357,7 +358,7 @@ if !has("gui")
 endif
 
 
-" powerline options 
+" powerline options
 " -------------------------------------------------------------------------- "
 " setlocal noexpandtab
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
@@ -368,7 +369,7 @@ let g:syntastic_python_flake8_args = '--ignore=W191,E501,E121,E122,E123,E128,E22
 au VimEnter * redrawstatus!
 
 
-" rcodetools options 
+" rcodetools options
 " ------------------------------------------------------------------- "
 " plain annotations
 map <silent> <F10> !xmpfilter -a<cr>
@@ -381,7 +382,7 @@ nmap <silent> <S-F10> V<S-F10>
 imap <silent> <S-F10> <ESC><S-F10>a
 
 " Annotate the full buffer
-" I actually prefer ggVG to %; it's a sort of poor man's visual bell 
+" I actually prefer ggVG to %; it's a sort of poor man's visual bell
 nmap <silent> <F11> mzggVG!xmpfilter -a<cr>'z
 imap <silent> <F11> <ESC><F11>
 
