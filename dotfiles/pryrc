@@ -10,15 +10,10 @@ Pry.config.exception_handler = proc do |output, exception, _|
   output.puts "#{exception.class}: #{exception.message}"
   output.puts "from #{exception.backtrace.first}"
 end
-
-# commands
-#Pry.config.commands.import Pry::ExtendedCommands::Experimental
-#command_set = Pry::CommandSet.new do
-#  command "clear", "Clear the screen." do
-#    system 'clear'
-#  end
-#end
-#Pry.config.commands.import command_set
+# debugger commands
+Pry.commands.alias_command 'c', 'continue'
+Pry.commands.alias_command 's', 'step'
+Pry.commands.alias_command 'n', 'next'
 
 # awesome_print
 begin
@@ -26,6 +21,22 @@ begin
   Pry.config.print = proc { |output, value| Pry::Helpers::BaseHelpers.stagger_output("=> #{value.ai}", output) }
 rescue LoadError => err
   puts "no awesome_print :("
+end
+
+# table_print
+begin
+  require 'table_print'
+rescue LoadError => err
+  puts "no table_print :("
+end
+
+# handling remote boxes and filesystems
+begin
+  require 'class_loader'
+  require 'vfs'
+  require 'vos'
+rescue LoadError => err
+  puts "no support for remote operations :("
 end
 
 # hirb
