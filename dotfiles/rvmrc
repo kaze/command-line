@@ -1,6 +1,0 @@
-rvm_configure_env=(CFLAGS="-march=core2 -O2 -pipe -fomit-frame-pointer")
-#rvm_configure_env=(CFLAGS="-march=native -O3")
-export rvm_path="/usr/local/rvm"
-
-# export RUBY_GC_MALLOC_LIMIT=60000000
-# export RUBY_FREE_MIN=200000
