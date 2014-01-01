@@ -77,6 +77,7 @@ if [[ ! -d "${HOME}/.vim" ]]; then
   rm -rf "${HOME}/.oh-my-zsh/custom";
   ln -sf "$(pwd)/custom" "${HOME}/.oh-my-zsh";
   link_dotfile "zshrc";
+  link_dotfile "zshenv";
 
   echo "---> zsh customization done";
 

@@ -17,6 +17,8 @@ alias vdir='vdir --color'
 alias duck='du -cks * | sort -rn | head -10'
 alias rserver='ruby -run -e httpd . -p5000'
 alias pserver='python -m SimpleHTTPServer'
+alias j='jump'
+
 
 # tmux
 # --------------------------------------------------------------------------- #
